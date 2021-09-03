@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Vehicles.API.Data;
 using Vehicles.API.Data.Entities;
 
@@ -20,7 +17,7 @@ namespace Vehicles.API.Controllers
         }
 
         // GET: VehicleTypes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index()  //Index es la que lista los articulos
         {
             return View(await _context.VehicleTypes.ToListAsync());
         }
